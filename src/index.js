@@ -84,9 +84,11 @@ function onLoadMore() {
   fetchCards()
     .then(
       setTimeout(() => {
-        window.scrollBy({
-          top: document.documentElement.clientHeight -100,
+
+        window.scrollTo({
+          top: refs.cardsContainer.scrollHeight,
           behavior: 'smooth',
+          block: 'end'
         });
       }, 1000),
     )
